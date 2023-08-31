@@ -1,7 +1,7 @@
 {
-  "name": "Retail City Transactions",
+  "name": "Retail City Transactions Dispatcher",
   "projectId": "8f6edfef-1248-41bf-bb2e-9f6218d00494",
-  "description": "Robotic Enterprise Framework",
+  "description": "The Dispatch Robot:\r\nTaking the files to proces and extracting the information to update",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.22.0-preview]",
