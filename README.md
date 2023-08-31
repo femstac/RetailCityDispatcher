@@ -1,16 +1,7 @@
 ### Documentation is included in the Documentation folder ###
 
 
-### REFrameWork Template ###
-**Robotic Enterprise Framework**
-
-* Built on top of *Transactional Business Process* template
-* Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
-* Keeps external settings in *Config.xlsx* file and Orchestrator assets
-* Pulls credentials from Orchestrator assets and *Windows Credential Manager*
-* Gets transaction data from Orchestrator queue and updates back status
-* Takes screenshots in case of system exceptions
+### REFrameWork Template For Retail City Transactions Dispatcher Robot ###
 
 
 ### How It Works ###
@@ -19,6 +10,8 @@
  + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
  + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
  + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
+ + .Workflow/*GetListofFilesinFolder* - Opens and gets all the files in the source folder
+
 
 2. **GET TRANSACTION DATA**
  + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
