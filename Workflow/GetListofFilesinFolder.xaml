@@ -3,7 +3,7 @@
     <x:Property Name="in_SourceFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="out_RetailFileList" Type="OutArgument(scg:List(x:String))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>440,312</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,912</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -91,7 +91,7 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get List of Files in Folder" sap:VirtualizedContainerService.HintSize="496,717.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_34">
+  <Sequence DisplayName="Get List of Files in Folder" sap:VirtualizedContainerService.HintSize="496,847.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_34">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="SourceFolderExists" />
       <Variable x:TypeArguments="x:String" Name="SourceFolderPath" />
@@ -119,10 +119,10 @@
       </Assign.Value>
     </Assign>
     <ui:FolderExistsX DisplayName="Check if Source Folder Is available" Exists="[SourceFolderExists]" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[SourceFolderPath]" />
-    <If Condition="[SourceFolderExists]" DisplayName="Source Folder is Available" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[SourceFolderExists]" DisplayName="Source Folder is Available" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -163,7 +163,14 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[New Exception (&quot;Source Folder Not Found.&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw DisplayName="Throw Business Exception" Exception="[New BusinessRuleException (&quot;Source Folder Not Found.&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
         </Sequence>
       </If.Else>
     </If>

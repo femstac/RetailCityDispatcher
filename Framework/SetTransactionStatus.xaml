@@ -125,7 +125,7 @@
               <av:PointCollection x:Key="ConnectorLocation">110,634.9333333333334 110,664.9333333333334 210,664.9333333333334 210,715.6</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful." DisplayName="Success" sap:VirtualizedContainerService.HintSize="200,163.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful." DisplayName="Success" sap:VirtualizedContainerService.HintSize="512,738.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -294,7 +294,7 @@
                   <av:Size x:Key="ShapeSize">200,180</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="500.66666666666674,1854" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="200,180" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
