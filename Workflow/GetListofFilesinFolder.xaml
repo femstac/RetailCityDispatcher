@@ -3,7 +3,7 @@
     <x:Property Name="in_SourceFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="out_RetailFileList" Type="OutArgument(scg:List(x:String))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,912</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,1397.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -91,7 +91,7 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get List of Files in Folder" sap:VirtualizedContainerService.HintSize="496,847.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_34">
+  <Sequence DisplayName="Get List of Files in Folder" sap:VirtualizedContainerService.HintSize="622,1332.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_34">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="SourceFolderExists" />
       <Variable x:TypeArguments="x:String" Name="SourceFolderPath" />
@@ -102,7 +102,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign Source Folder path from the Input argument" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Source Folder path from the Input argument" sap:VirtualizedContainerService.HintSize="560,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SourceFolderPath]</OutArgument>
       </Assign.To>
@@ -110,7 +110,7 @@
         <InArgument x:TypeArguments="x:String">[in_SourceFolderPath]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Initialize new list" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Initialize new list" sap:VirtualizedContainerService.HintSize="560,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[RetailFileList]</OutArgument>
       </Assign.To>
@@ -118,8 +118,8 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new list (of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:FolderExistsX DisplayName="Check if Source Folder Is available" Exists="[SourceFolderExists]" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[SourceFolderPath]" />
-    <If Condition="[SourceFolderExists]" DisplayName="Source Folder is Available" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:FolderExistsX DisplayName="Check if Source Folder Is available" Exists="[SourceFolderExists]" sap:VirtualizedContainerService.HintSize="560,135.33333333333334" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[SourceFolderPath]" />
+    <If Condition="[SourceFolderExists]" DisplayName="Source Folder is Available" sap:VirtualizedContainerService.HintSize="560,672.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,13 +127,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="526,493.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_36">
+        <Sequence sap:VirtualizedContainerService.HintSize="526,489.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_36">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachFileX DisplayName="For Each Retail File in Folder" Filter="Retail City *.txt" Folder="[SourceFolderPath]" sap:VirtualizedContainerService.HintSize="484,406" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+          <ui:ForEachFileX DisplayName="For Each Retail File in Folder" Filter="Retail City *.txt" Folder="[SourceFolderPath]" sap:VirtualizedContainerService.HintSize="484,402" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
             <ui:ForEachFileX.Body>
               <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                 <ActivityAction.Argument1>
@@ -153,17 +153,23 @@
                 </Sequence>
               </ActivityAction>
             </ui:ForEachFileX.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachFileX>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,179.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_37">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,178.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_37">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw DisplayName="Throw Business Exception" Exception="[New BusinessRuleException (&quot;Source Folder Not Found.&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1">
+          <Throw DisplayName="Throw Business Exception" Exception="[New BusinessRuleException (&quot;Source Folder Not Found.&quot;)]" sap:VirtualizedContainerService.HintSize="334,91.33333333333333" sap2010:WorkflowViewState.IdRef="Throw_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,7 +180,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Assign DisplayName="Retail file list to an Out Argument" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Retail file list to an Out Argument" sap:VirtualizedContainerService.HintSize="560,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[out_RetailFileList]</OutArgument>
       </Assign.To>
